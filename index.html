@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Validação de números</title>
+<script>
+    function validarFormulario() {
+    var campoA = parseFloat(document.getElementById('campoA').value);
+    var campoB = parseFloat(document.getElementById('campoB').value);
+
+    if (campoB > campoA) {
+        alert('Formulário válido! B é maior que A.');
+    } else {
+        alert('Formulário inválido! B precisa ser maior que A.');
+    }
+
+      // Isso impede o envio do formulário, já que estamos tratando a validação na própria página.
+    return false;
+    }
+</script>
+</head>
+<body>
+<form onsubmit="return validarFormulario()">
+    <label for="campoA">Campo A:</label>
+    <input type="number" id="campoA" name="campoA" required><br><br>
+
+    <label for="campoB">Campo B:</label>
+    <input type="number" id="campoB" name="campoB" required><br><br>
+
+    <input type="submit" value="Enviar">
+</form>
+</body>
+</html>
